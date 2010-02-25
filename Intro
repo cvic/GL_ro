@@ -1,0 +1,32 @@
+                                                                   
+Generative Lexicon (GL) is a theory of linguistic semantics
+which focuses on the distributed nature of compositional-
+ity in natural language (Pustejovsky, 1995). Unlike purely
+verb-based approaches to compositionality, GL attempts to
+spread the semantic load across all constituents of an utter-
+ance. From the nature of word meaning to lexical creativity,
+GL provides a different perspective on many of NLPs most
+important questions. Hence, GL is not just a theory, but is
+meant to be implemented as a component of the backbone
+of larger NL systems (Pustejovsky and Boguraev, 1993).
+One of the major complaints against GL has been that it is
+too difficult to embed in such a system. At the heart of GL is
+its network of qualia relations, and any true GL implemen-
+tation would have to have a system of qualia-like structures.
+However, creating such an ontology requires a prohibitive       
+investment of time for most researchers, and current GL             
+implementations place large constraints on any lexical de-          
+velopment project.                                                
+
+To help overcome this problem, we have developed a large
+generative lexicon ontology and dictionary for use by the
+general research community. This system, called the Bran-
+deis Semantic Ontology (BSO), is intended to allow for
+more widespread access to GL-based lexical resources and
+help researchers in a variety of computational tasks. The
+specification of the type system used in the BSO largely
+follows that proposed by the SIMPLE specification (Busa
+et al., 2001), which was adopted by the EU-sponsored SIM-
+PLE project (Lenci et al., 2000).
+
+

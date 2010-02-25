@@ -1,0 +1,20 @@
+Nucleul lexiconului generativ este rețeaua de qualia relations. 
+Orice implementare trebuie să aibă un sistem de structuri qualia-like.
+
+BSO: Brandeis Semantic Ontology
+Ontologie de lexicon generativ + dicționar
+
+BSO este bazată pe specificația SIMPLE-GL 
+
+EuroWordNet este un proiect ce urmărește crearea unor rețele semantice pentru cele mai importante limbi europene 
+și este bazat pe LG dar nu include qualia pentru cuvinte, spre deosebire de BSO. 
+
+
+Linkuri:
+http://www.ilc.cnr.it/clips/Ontology.htm
+http://sofa.projects.semwebcentral.org/
+http://www.ub.es/gilcub/SIMPLE/simple.html#Specifications
+
+http://www.ub.es/gilcub/SIMPLE/papers.html
+
+
