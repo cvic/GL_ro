@@ -1,0 +1,16 @@
+Generative Lexicon (GL) is a theory of linguistic semantics which focuses on the distributed nature of compositionality in natural language. The first major work outlining the framework is James Pustejovsky's "Generative Lexicon" (1991). Subsequent important developments are presented in Pustejovsky and Boguraev (1993), Bouillon (1997), and Busa (1996). The first unified treatment of GL was given in Pustejovsky (1995). Unlike purely verb-based approaches to compositionality, Generative Lexicon attempts to spread the semantic load across all constituents of the utterance. Central to the philosophical perspective of GL are two major lines of inquiry: (1) How is it that we are able to deploy a finite number of words in our language in an unbounded number of contexts? (2) Is lexical information and the representations used in composing meanings separable from our commonsense knowledge?
+
+GL was initially developed as a theoretical framework for encoding selectional knowledge in natural language. This in turn required making some changes in the formal rules of representation and composition. Perhaps the most controversial aspect of GL has been the manner in which lexically encoded knowledge is exploited in the construction of interpretations for linguistic utterances. The computational resources available to a lexical item within this theory consist of the following four levels:
+
+   1. Lexical Typing Structure: giving an explicit type for a word positioned within a type system for the language;
+   2. Argument Structure: specifying the number and nature of the arguments to a predicate;
+   3. Event Structure: defining the event type of the expression and any subeventual structure it may have; with subevents;
+   4. Qualia Structure: a structural differentiation of the predicative force for a lexical item.
+
+The qualia structure, inspired by Moravcsik's (1975) interpretation of the aitia of Aristotle, are defined by Pustejovsky as the modes of explanation associated with a word or phrase in the language, and are defined as follows:
+
+   1. formal: the basic category of which distinguishes the meaning of a word within a larger domain;
+   2. constitutive: the relation between an object and its constituent parts;
+   3. telic: the purpose or function of the object, if there is one;
+   4. agentive: the factors involved in the object's origins or ``coming into being.
+
