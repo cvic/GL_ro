@@ -24,6 +24,8 @@
 //		$("#current_rev").html("v"+$.mcDropdown.version);
 		$("#category0").mcDropdown("#categorymenu0");
 		$("#category1").mcDropdown("#categorymenu1");
+		$("#category_e").mcDropdown("#categorymenu_e");
+		$("#category_s").mcDropdown("#categorymenu_s");
 		$("#category2").mcDropdown("#categorymenu2");
 		$("#category3").mcDropdown("#categorymenu3");
 		$("#category4").mcDropdown("#categorymenu4");
@@ -39,7 +41,7 @@
 <!-- <p>GL Demo</p> --><h3 id="example">Demo LG - interfata de adnotare</h3>
 <!--// start example code //-->
 
-<h2 id="example">Ontologia</h2>
+<h4 id="example">Ontologie</h4>
 
 Selectati tipul ontologic:<br />
 	<input type="text" name="category0" id="category0" value="" />
@@ -344,24 +346,214 @@ Selectati tipul ontologic:<br />
 					<ul>
 						<li rel="451">
 						Phenomenon
+							<ul>
+								<li rel="4511">
+									Weather_verbs
+								</li>
+								<li rel="4512">
+									Disease
+								</li>
+								<li rel="4513">
+									Stimuli
+								</li>
+							</ul>
 						</li>
 						<li rel="452">
 						Aspectual
+								<ul>
+									<li rel="4521">
+										Cause_aspectual
+									</li>
+								</ul>
 						</li>
 						<li rel="453">
 						State
+							<ul>
+								<li rel="4531">
+									Exist
+								</li>
+								<li rel="4532">
+									Relational_state
+									<ul>
+										<li rel="45321">
+											Identificational_state 
+										</li>
+										<li rel="45322">
+											Constitutive_state  
+										</li>
+										<li rel="45323">
+											Stative_location
+										</li>
+										<li rel="45324">
+											Stative_possession
+										</li>
+									</ul>
+								</li>
+							</ul>	
 						</li>
 						<li rel="454">
 						Act	
+							<ul>
+								<li rel="4541">
+									 Non_relational_act
+								</li>
+								<li rel="4542">
+									 Relational_act 
+									<ul>
+										<li rel="45421">
+											Cooperative_activity 
+										</li>
+										<li rel="45422">
+											Purpose_act  
+										</li>
+									</ul>
+								</li>
+								<li rel="4543">
+									 Move
+									<ul>
+										<li rel="45431">
+											Caused_motion 
+										</li>
+									</ul>	
+								</li>
+								<li rel="4544">
+									 Cause_act  
+								</li>
+								<li rel="4545">
+									 Speech_act 
+									<ul>
+										<li rel="45451">
+											Cooperative_speech_act
+										</li>
+										<li rel="45452">
+											Reporting_events  
+										</li>
+										<li rel="45453">
+											Commissives 
+										</li>
+										<li rel="45454">
+											Directives
+										</li>
+										<li rel="45455">
+											 Expressives
+										</li>
+										<li rel="45456">
+											 Declaratives
+										</li>
+									</ul>	
+								</li>	
+							</ul>	
+
 						</li>
 						<li rel="455">
 						Psychological_event
+							<ul>
+								<li rel="4551">
+									 Cognitive_event 
+									<ul>
+										<li rel="45511">
+											Judgement
+										</li>
+									</ul>	
+								</li>
+								<li rel="4552">
+									  Experience_event 
+									<ul>
+										<li rel="45521">
+											Caused_Experience_event
+										</li>
+									</ul>		
+								</li>
+								<li rel="4553">
+									 Perception  
+								</li>
+								<li rel="4554">
+									 Modal_event  
+								</li>
+							</ul>
 						</li>
 						<li rel="456">
 						Change	
+							<ul>
+								<li rel="4561">
+									 Relational_change    
+									<ul>
+										<li rel="45611">
+											 Constitutive_change  
+										</li>
+										<li rel="45612">
+											 Change_of_state    
+										</li>
+										<li rel="45613">
+											  Change_of_value  
+										</li>
+									</ul>	
+								</li>
+								<li rel="4562">
+									Change_possession   
+									<ul>
+										<li rel="45621">
+											Transaction  
+										</li>
+									</ul>	
+								</li>
+								<li rel="4563">
+									Change_of_location 
+								</li>	
+								<li rel="4564">
+									Natural_transition    
+								</li>	
+								<li rel="4565">
+									Acquire_knoweldge
+								</li>		
+							</ul>
 						</li>
 						<li rel="457">
-						Cause_change	
+						Cause_change
+							<ul>
+								<li rel="4571">
+									Cause_relational_change   
+									<ul>
+										<li rel="45711">
+											Cause_constitutive_change   
+										</li>
+										<li rel="45712">
+											Cause_change_of_state  
+										</li>
+										<li rel="45713">
+											Cause_change_of_value   
+										</li>
+											
+									</ul>	 
+								</li>	
+								<li rel="4572">
+									Cause_change_location   
+								</li>	
+								<li rel="4573">
+									Cause_natural_transition     
+								</li>	
+								<li rel="4574">
+									Creation   
+									  <ul>
+										<li rel="45711">
+											Physical_creation     
+										</li>
+										<li rel="45712">
+											Mental_creation       
+										</li>
+										<li rel="45713">
+											Symbolic_creation      
+										</li>
+										<li rel="45713">
+											Copy_creation   
+										</li>
+											
+									</ul>	    
+								</li>	
+								<li rel="4575">
+									Give_knowledge     
+								</li>		
+							</ul>		
 						</li>
 					</ul>		
 					</ul>
@@ -376,11 +568,33 @@ Selectati tipul ontologic:<br />
 
 
 
+<h4 id="example">Tip evenimential</h4>
+
+<p>
+Selectati tipul evenimential:<br />
+	<input type="text" name="category_e" id="category_e" value="" />
+</p>		
+<ul id="categorymenu_e" class="mcdropdown_menu">	<li rel="1">
+		tip1
+	</li>
+	
+	<li rel="2">
+		tip2
+	</li>
+	<li rel="3">
+		tip3
+	</li>
+	
+	<li rel="4">
+		tip4
+	</li>
+</ul>
 
 
 
 
-<h2 id="example">Morfologia</h2>
+
+<h4 id="example">Morfologie</h4>
 
 <p>
 Selectati o parte de vorbire:<br />
@@ -423,9 +637,32 @@ Selectati o parte de vorbire:<br />
 
 <br />
 <br />
-<br />
 
-<h2 id="example">Structura Qualia</h2>
+<h4 id="example">Semantica</h4>
+
+<p>
+Selectati sensul:<br />
+	<input type="text" name="category_s" id="category_s" value="" />
+</p>		
+<ul id="categorymenu_s" class="mcdropdown_menu">	<li rel="1">
+		sens1
+		
+	</li>
+	
+	<li rel="2">
+		sens2
+	</li>
+	<li rel="3">
+		sens3
+	</li>
+	
+	<li rel="4">
+		sens4
+	</li>
+</ul>
+
+
+<h4 id="example">Structura qualia</h4>
 
 
 Formal:<br />
@@ -450,7 +687,7 @@ Formal:<br />
 
 
 <p>
-Constitutive:<br />
+Constitutiv:<br />
 	<input type="text" name="category1" id="category1" value="" />
 </p>		
 <ul id="categorymenu1" class="mcdropdown_menu">	<li rel="1">
@@ -575,7 +812,7 @@ Constitutive:<br />
 </ul>
 
 <p>
-Agentive:<br />
+Agentiv:<br />
 	<input type="text" name="category2" id="category2" value="" />
 </p>		
 <ul id="categorymenu2" class="mcdropdown_menu">	<li rel="1">
@@ -678,6 +915,7 @@ Telic:<br />
 <br />
 <br />
 
+<h4 id="example">Reprezentare predicationala</h4>
 
 
 </body>
