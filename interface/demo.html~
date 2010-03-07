@@ -45,7 +45,7 @@ Selectati tipul ontologic:<br />
 	<input type="text" name="category0" id="category0" value="" />
 </p>
 		
-<ul id="categorymenu0" class="mcdropdown_menu">	<li rel="1">
+<ul id="categorymenu" class="mcdropdown_menu">	<li rel="1">
 		Telic
 	</li>	
 	<li rel="2">
