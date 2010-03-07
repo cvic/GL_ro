@@ -1,0 +1,368 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<title>Demo LG - interfata de adnotare</title>
+
+	<link type="text/css" href="./css/docs.css" rel="stylesheet" media="all" />
+	<link type="text/css" href="./css/jquery.mcdropdown.min.css" rel="stylesheet" media="all" />
+
+	<!---// load jQuery from the GoogleAPIs CDN //--->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+
+	<script type="text/javascript" src="./lib/jquery.mcdropdown.min.js"></script>
+	<script type="text/javascript" src="./lib/jquery.bgiframe.js"></script>
+
+	<script type="text/javascript">
+	<!--//
+	// on DOM ready
+	$(document).ready(function (){
+		$("#current_rev").html("v"+$.mcDropdown.version);
+		$("#category").mcDropdown("#categorymenu");
+	});
+	//-->
+	</script>
+</head>
+
+<body>
+<!-- <p>GL Demo</p> --><h3 id="example">Demo LG - interfata de adnotare</h3>
+<!--// start example code //-->
+<br />
+<p>
+Selectati tipul ontologic:<br />
+	<input type="text" name="category" id="category" value="" />
+</p>
+		
+<ul id="categorymenu" class="mcdropdown_menu">	<li rel="1">
+		Telic
+	</li>	
+	<li rel="2">
+		Agentive
+		<ul>
+			<li rel="21">
+				Cause
+			</li>
+		</ul>
+	</li>
+	
+	<li rel="3">
+	Constitutive
+			<ul>
+				<li rel="31">
+				Part
+					<ul>
+						<li rel="311">
+						Body Part
+						</li>
+					</ul>
+				</li>
+				<li rel="32">
+				Group
+					<ul>
+						<li rel="321">
+						Human group
+						</li>
+					</ul>
+				</li>
+				<li rel="33">
+				Amount
+				</li>
+		</ul>	
+
+	</li>
+	
+	<li rel="4">
+	Entity
+		<ul>
+				<li rel="41">
+				Concrete entity
+					<ul>
+						<li rel="411">
+						Location
+							<ul>
+								<li rel="4111">
+									3_D_Location	
+								</li>
+								<li rel="4112">
+									Geopolitical_location
+								</li>
+								<li rel="4113">
+									Area
+								</li>
+								<li rel="4114">
+									Opening	
+								</li>
+								<li rel="4115">
+									Building
+								</li>
+								<li rel="4116">
+									Artifactual_area
+								</li>		
+							</ul>
+						</li>
+						<li rel="412">
+						Material
+						</li>
+						<li rel="413">
+						Artifact
+								<ul>
+									<li rel="4131">
+										Artifactual_material
+									</li>
+									<li rel="4132">
+										Furniture
+									</li>
+									<li rel="4133">
+										Clothing
+									</li>
+									<li rel="4134">
+										Container      
+									</li>
+									<li rel="4135">
+										Artwork 	
+									</li>
+									<li rel="4136">
+										 Instrument 	
+									</li>	
+									<li rel="4137">
+										Money 
+									</li>	
+									<li rel="4138">
+										Vehicle 
+									</li>	
+									<li rel="4139">
+										 Semiotic_artifact 	
+									</li>	
+		
+								</ul>
+						</li>
+						<li rel="414">
+						Food
+								<ul>
+									<li rel="4141">
+										Artifact_Food
+									</li>	
+									<li rel="4142">
+										Flavouring
+									</li>		
+								</ul>
+						</li>
+						<li rel="415">
+						Physical_object
+						</li>
+						<li rel="416">
+						Organic_object
+						</li>	
+						<li rel="417">
+						Living_entity
+								<ul>
+									<li rel="4171">
+										Animal
+											<ul>
+												<li rel="41711">
+													Earth_animal	
+												</li>
+												<li rel="41712">
+													Air_animal
+												</li>	
+												<li rel="41713">
+													Water_animal	
+												</li>
+											</ul>	
+									</li>	
+									<li rel="4172">
+										Human
+											<ul>
+												<li rel="41721">
+													People
+												</li>
+												<li rel="41722">
+													Role
+														<ul>
+															<li rel="417221">
+																Ideo
+															</li>					
+															<li rel="417222">
+																Kinship
+															</li>						
+															<li rel="417223">
+																Social_status
+															</li>					
+														</ul>	
+												</li>	
+												<li rel="41723">
+													Agent_of_temporary_activity 	
+												</li>
+												<li rel="41724">
+													Agent_of_persistent_activity 
+												</li>
+												<li rel="41725">
+													Patient_of_event
+												</li>	
+												<li rel="41726">
+													 Profession    	
+												</li>
+											</ul>			
+									</li>	
+									<li rel="4173">
+										Vegetal_entity
+											<ul>
+												<li rel="41731">
+													Plant	
+												</li>
+												<li rel="41732">
+													Flower
+												</li>	
+												<li rel="41733">
+													Fruit
+												</li>
+												<li rel="41734">
+													Vegetable
+												</li>	
+											</ul>	
+									</li>	
+									<li rel="4174">
+										Micro-organism
+									</li>	
+								</ul>
+						</li>	
+						<li rel="418">
+						Substance
+								<ul>
+									<li rel="4181">
+										Natural_substance
+									</li>
+									<li rel="4182">
+										Substance_food
+									</li>
+									<li rel="4183">
+										Drink
+											<ul>
+												<li rel="41831">
+													Artifactual_drink
+												</li>
+											</ul>	
+									</li>
+								</ul>
+						</li>		
+					</ul>
+				</li>
+				<li rel="42">
+				Property
+					<ul>
+						<li rel="421">
+						Quality	
+						</li>
+						<li rel="422">
+						Psych_property
+						</li>
+						<li rel="423">
+						Physical_property
+								<ul>
+									<li rel="4221">
+										Physical_power
+									</li>
+									<li rel="4222">
+										Color
+									</li>
+									<li rel="4223">
+										Shape
+									</li>
+								</ul>
+						</li>
+						<li rel="424">
+						Social_property	
+						</li>	
+					</ul>
+				</li>
+				<li rel="43">
+				Abstract_entity
+					<ul>
+						<li rel="431">
+						Domain	
+						</li>
+						<li rel="432">
+						Time
+						</li>
+						<li rel="433">
+						Moral_standards
+						</li>
+						<li rel="434">
+						Cognitive_fact	
+						</li>
+						<li rel="435">
+						Movement_of_thought
+						</li>
+						<li rel="436">
+						Institution	
+						</li>	
+						<li rel="437">
+						Convention
+						</li>	
+						<li rel="438">
+						Abstract_location
+						</li>		
+					</ul>
+				</li>
+				<li rel="44">
+				Representation
+					<ul>
+						<li rel="441">
+						Language	
+						</li>
+						<li rel="442">
+						Sign
+						</li>
+						<li rel="443">
+						Information
+						</li>
+						<li rel="444">
+						Number	
+						</li>
+						<li rel="445">
+						Unit_of_measurement	
+						</li>
+						<li rel="446">
+						Metalanguage	
+						</li>		
+					</ul>
+				</li>
+				<li rel="45">
+				Event
+					<ul>
+						<li rel="451">
+						Phenomenon
+						</li>
+						<li rel="452">
+						Aspectual
+						</li>
+						<li rel="453">
+						State
+						</li>
+						<li rel="454">
+						Act	
+						</li>
+						<li rel="455">
+						Psychological_event
+						</li>
+						<li rel="456">
+						Change	
+						</li>
+						<li rel="457">
+						Cause_change	
+						</li>
+					</ul>		
+					</ul>
+				</li>
+		</ul>	
+		
+	</li>
+</ul>
+
+<br />
+<br />
+
+
+</body>
+</html>

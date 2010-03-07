@@ -1,0 +1,342 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<title>Demo LG</title>
+
+	<link type="text/css" href="./css/docs.css" rel="stylesheet" media="all" />
+	<link type="text/css" href="./css/jquery.mcdropdown.min.css" rel="stylesheet" media="all" />
+
+	<!---// load jQuery from the GoogleAPIs CDN //--->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+
+	<script type="text/javascript" src="./lib/jquery.mcdropdown.min.js"></script>
+	<script type="text/javascript" src="./lib/jquery.bgiframe.js"></script>
+
+	<script type="text/javascript">
+	<!--//
+	// on DOM ready
+		$(document).ready(function (){
+		$("#current_rev").html("v"+$.mcDropdown.version);
+		$("#category").mcDropdown("#categorymenu");
+
+//		$("#current_rev").html("v"+$.mcDropdown.version);
+		$("#category1").mcDropdown("#categorymenu1");
+		$("#category2").mcDropdown("#categorymenu2");
+		$("#category3").mcDropdown("#categorymenu3");
+		$("#category4").mcDropdown("#categorymenu4");
+
+
+	});
+
+	//-->
+	</script>
+</head>
+
+<body>
+<!-- <p>GL Demo</p> --><h3 id="example">Demo LG - interfata de adnotare</h3>
+<!--// start example code //-->
+
+<h2 id="example">Morfologia</h2>
+
+<p>
+Selectati o parte de vorbire:<br />
+	<input type="text" name="category4" id="category4" value="" />
+</p>		
+<ul id="categorymenu4" class="mcdropdown_menu">	<li rel="1">
+		Verb
+		<ul>
+			<li rel="10">
+			Intranzitiv
+
+			<li rel="11">
+			Tranzitiv
+			</li>
+			<li rel="12">
+			Ditranzitiv
+			</li>
+		</ul>
+	</li>
+	
+	<li rel="2">
+	Substantiv
+		<ul>
+			<li rel="20">
+			Predicativ
+			</li>
+			<li rel="21">
+			Nepredicativ
+			</li>
+		</ul>	
+	</li>
+	<li rel="3">
+	Adjectiv
+	</li>
+	
+	<li rel="4">
+	Adverb
+	</li>
+</ul>
+
+<br />
+<br />
+<br />
+
+<h2 id="example">Structura Qualia</h2>
+
+
+Formal:<br />
+	<input type="text" name="category" id="category" value="" />
+</p>		
+<ul id="categorymenu" class="mcdropdown_menu">	<li rel="1">
+	isa
+	</li>	
+	<li rel="2">
+	antonym_comp
+	</li>
+
+	<li rel="3">
+	antonym_grad
+	</li>		
+
+	<li rel="4">
+	mult_opposition
+	</li>
+</ul>
+
+
+
+<p>
+Constitutive:<br />
+	<input type="text" name="category1" id="category1" value="" />
+</p>		
+<ul id="categorymenu1" class="mcdropdown_menu">	<li rel="1">
+		Constitutive
+		<ul>
+			<li rel="10">
+			made_of
+			</li>	
+			<li rel="11">
+			is_a_follower_of
+			</li>
+			<li rel="12">
+			has_as_member
+			</li>
+			<li rel="13">
+			is_a_member_of
+			</li>
+			<li rel="14">
+			has_as_part
+			</li>
+			<li rel="15">
+			instrument
+			</li>
+			<li rel="16">
+			kinship
+			</li>
+			<li rel="17">
+			is_a_part_of
+			</li>
+			<li rel="18">
+			resulting_state
+			</li>
+			<li rel="19">
+			relates
+			</li>
+			<li rel="199">
+			uses
+			</li>
+		</ul>
+	</li>	
+	<li rel="2">
+	Property
+		<ul>
+			<li rel="20">
+			causes
+			</li>
+			<li rel="21">
+			concerns
+			</li>	
+			<li rel="22">
+			affects
+			</li>	
+			<li rel="23">
+			constitutive_activity
+			</li>	
+			<li rel="24">
+			contains
+			</li>	
+			<li rel="25">
+			has_as_color
+			</li>	
+			<li rel="26">
+			has_as_effect
+			</li>	
+			<li rel="27">
+			has_as_property
+			</li>	
+			<li rel="28">
+			measured_by
+			</li>	
+			<li rel="29">
+			measures
+			</li>	
+			<li rel="290">
+			produces
+			</li>	
+			<li rel="291">
+			produced_by
+			</li>	
+			<li rel="292">
+			property_of
+			</li>	
+			<li rel="293">
+			quantifies
+			</li>	
+			<li rel="294">
+			related_to
+			</li>	
+			<li rel="295">
+			successor_of
+			</li>	
+			<li rel="296">
+			precedes
+			</li>
+			<li rel="297">
+			typical_of
+			</li>	
+			<li rel="298">
+			contains
+			</li>	
+			<li rel="299">
+			feeling
+			</li>	
+	
+		</ul>
+	</li>
+
+	<li rel="3">
+		Location
+		<ul>
+			<li rel="30">
+			is_in
+			</li>
+			<li rel="31">
+			lives_in
+			</li>	
+			<li rel="32">
+			typical_location
+			</li>	
+		</ul>
+	</li>		
+</ul>
+
+<p>
+Agentive:<br />
+	<input type="text" name="category2" id="category2" value="" />
+</p>		
+<ul id="categorymenu2" class="mcdropdown_menu">	<li rel="1">
+		Agentive
+		<ul>
+			<li rel="10">
+			result_of
+			</li>
+			<li rel="11">
+			agentive_prog
+			</li>
+			<li rel="12">
+			agentive_cause
+			</li>
+			<li rel="13">
+			agentive_experience
+			</li>
+			<li rel="14">
+			caused_by
+			</li>
+			<li rel="15">
+			source
+			</li>	
+		</ul>
+	</li>	
+	<li rel="2">
+	Artifactual agentive
+		<ul>
+			<li rel="20">
+			created_by
+			</li>
+			<li rel="21">
+			derived_from
+			</li>	
+		</ul>
+	</li>
+
+</ul>
+
+<p>
+Telic:<br />
+	<input type="text" name="category3" id="category3" value="" />
+</p>		
+<ul id="categorymenu3" class="mcdropdown_menu">	<li rel="1">
+		Instrumental
+		<ul>
+			<li rel="10">
+			used_for
+			</li>
+			
+			<li rel="11">
+			used_as
+			</li>
+			<li rel="12">
+			used_by
+			</li>
+			<li rel="13">
+			used_against
+			</li>
+		</ul>
+	</li>	
+	<li rel="2">
+	Telic
+		<ul>
+			<li rel="20">
+			indirect_telic
+			</li>
+			<li rel="21">
+			purpose
+			</li>	
+		</ul>
+	</li>
+
+	<li rel="3">
+		Activity
+		<ul>
+			<li rel="30">
+			is_the_activity_of
+			</li>
+			<li rel="31">
+			is_the_ability_of
+			</li>	
+			<li rel="32">
+			is_the_habit_of
+			</li>	
+		</ul>
+	</li>		
+
+	<li rel="4">
+			Direct telic
+			<ul>
+				<li rel="41">
+				object_of_activity
+				</li>
+			</ul>	
+		
+	</li>
+</ul>
+
+<br />
+<br />
+
+
+
+</body>
+</html>
