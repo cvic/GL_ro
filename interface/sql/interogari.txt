@@ -1,0 +1,208 @@
+/*  interogare generala unitati semantice  */
+select 
+  c.cod
+  ,c.id
+  ,c.cuvant
+  ,c.definitie
+  ,c.exemplu
+  ,c.tip_ontologic
+  ,c.tip_evenimential
+  ,c.tip_pos
+  ,c.sens
+  ,ma.tip_q_agentive tip_agentive
+  ,c1.cuvant us_legatura_agentive
+  ,mf.tip_q_formal tip_formal
+  ,c2.cuvant us_legatura_formal
+  ,mc.tip_q_constitutive tip_constitutive
+  ,c3.cuvant us_legatura_constitutive
+  ,mt.tip_q_telic tip_telic
+  ,c4.cuvant us_legatura_telic
+  ,tl.nume tip_legatura
+  ,p.nume predicat
+  ,ap.pozitie pozitie_argument
+  ,ap.tip_ontologic tip_ontologic_argument
+  ,rt.nume rol_tematic
+from cuvinte c
+left join predicate p on c.tip_predicat = p.id
+left join tip_legatura tl on tl.id = c.id_legatura
+left join argumente_predicat ap on ap.id_predicat = p.id
+left join rol_tematic rt on rt.id = ap.id_rol_tematic
+left join matrix_word_q_agentive ma on c.id = ma.id_base_word
+left join cuvinte c1 on ma.id_ref_word = c1.id
+left join matrix_word_q_formal mf on c.id = mf.id_base_word
+left join cuvinte c2 on mf.id_ref_word = c2.id
+left join matrix_word_q_constitutive mc on c.id = mc.id_base_word
+left join cuvinte c3 on mc.id_ref_word = c3.id
+left join matrix_word_q_telic mt on c.id = mt.id_base_word
+left join cuvinte c4 on mt.id_ref_word = c4.id
+order by 2,11
+
+
+/*  ierarhie generala ontologie -> descendenta*/
+select distinct 
+  l5.tip_parinte level_1
+  ,l5.tip_copil level_2
+  ,l4.tip_copil level_3
+  ,l3.tip_copil level_4
+  ,l2.tip_copil level_5
+  ,l1.tip_copil level_6
+  from ontologie_l1 l1
+  inner join ontologie_l2 l2 
+    on l2.tip_copil = l1.tip_parinte and l2.dimensiune = l1.dimensiune
+  inner join ontologie_l3 l3 
+    on l3.tip_copil = l2.tip_parinte and l3.dimensiune = l2.dimensiune
+  inner join ontologie_l4 l4 
+    on l4.tip_copil = l3.tip_parinte and l4.dimensiune = l3.dimensiune
+  inner join ontologie_l5 l5 
+    on l5.tip_copil = l4.tip_parinte and l5.dimensiune = l4.dimensiune
+
+union
+
+select distinct 
+  l4.tip_parinte level_1
+  ,l4.tip_copil level_2
+  ,l3.tip_copil level_3
+  ,l2.tip_copil level_4
+  ,l1.tip_copil level_5
+  ,null
+  from ontologie_l1 l1
+  inner join ontologie_l2 l2 
+    on l2.tip_copil = l1.tip_parinte and l2.dimensiune = l1.dimensiune
+  inner join ontologie_l3 l3 
+    on l3.tip_copil = l2.tip_parinte and l3.dimensiune = l2.dimensiune
+  inner join ontologie_l4 l4 
+    on l4.tip_copil = l3.tip_parinte and l4.dimensiune = l3.dimensiune
+  where (l4.tip_parinte,l4.dimensiune) not in (select tip_copil,dimensiune from ontologie_l5)
+
+union
+
+select distinct 
+  l3.tip_parinte level_1
+  ,l3.tip_copil level_2
+  ,l2.tip_copil level_3
+  ,l1.tip_copil level_4
+  ,null
+  ,null
+  from ontologie_l1 l1
+  inner join ontologie_l2 l2 
+    on l2.tip_copil = l1.tip_parinte and l2.dimensiune = l1.dimensiune
+  inner join ontologie_l3 l3 
+    on l3.tip_copil = l2.tip_parinte and l3.dimensiune = l2.dimensiune
+  where (l3.tip_parinte,l3.dimensiune) not in (select tip_copil,dimensiune from ontologie_l4)
+
+union
+
+select distinct 
+  l2.tip_parinte level_1
+  ,l2.tip_copil level_2
+  ,l1.tip_copil level_3
+  ,null
+  ,null
+  ,null
+  from ontologie_l1 l1
+  inner join ontologie_l2 l2 
+    on l2.tip_copil = l1.tip_parinte and l2.dimensiune = l1.dimensiune
+  where (l2.tip_parinte,l2.dimensiune) not in (select tip_copil,dimensiune from ontologie_l3)
+
+union
+
+select distinct 
+  l1.tip_parinte level_1
+  ,l1.tip_copil level_2
+  ,null
+  ,null
+  ,null
+  ,null
+  from ontologie_l1 l1
+  where (l1.tip_parinte,l1.dimensiune) not in (select tip_copil,dimensiune from ontologie_l2)
+
+order by 1,2,3,4,5
+
+
+/* ierarhie ascendenta (relativ la o notiune) */
+/* ATENTIE : ar trebui ca la fiecare interogare partiala sa apara aceeasi denumire */
+/* 'ideo' este una dintre notiunile cu cea mai lunga ierarhie  */
+select distinct 
+  l1.tip_copil level_1
+  ,l2.tip_copil level_2
+  ,l3.tip_copil level_3
+  ,l4.tip_copil level_4
+  ,l5.tip_copil level_5
+  ,l5.tip_parinte level_6
+  from ontologie_l1 l1
+  inner join ontologie_l2 l2 
+    on l2.tip_copil = l1.tip_parinte and l2.dimensiune = l1.dimensiune
+  inner join ontologie_l3 l3 
+    on l3.tip_copil = l2.tip_parinte and l3.dimensiune = l2.dimensiune
+  inner join ontologie_l4 l4 
+    on l4.tip_copil = l3.tip_parinte and l4.dimensiune = l3.dimensiune
+  inner join ontologie_l5 l5 
+    on l5.tip_copil = l4.tip_parinte and l5.dimensiune = l4.dimensiune
+  where l1.tip_copil = 'ideo'
+
+union
+
+select distinct 
+  l1.tip_copil level_1
+  ,l2.tip_copil level_2
+  ,l3.tip_copil level_3
+  ,l4.tip_copil level_4
+  ,l4.tip_parinte level_5
+  ,null
+  from ontologie_l1 l1
+  inner join ontologie_l2 l2 
+    on l2.tip_copil = l1.tip_parinte and l2.dimensiune = l1.dimensiune
+  inner join ontologie_l3 l3 
+    on l3.tip_copil = l2.tip_parinte and l3.dimensiune = l2.dimensiune
+  inner join ontologie_l4 l4 
+    on l4.tip_copil = l3.tip_parinte and l4.dimensiune = l3.dimensiune
+  where (l4.tip_parinte,l4.dimensiune) not in (select tip_copil,dimensiune from ontologie_l5)
+    and l1.tip_copil = 'ideo'
+
+union
+
+select distinct 
+  l1.tip_copil level_1
+  ,l2.tip_copil level_2
+  ,l3.tip_copil level_3
+  ,l3.tip_parinte level_4
+  ,null
+  ,null
+  from ontologie_l1 l1
+  inner join ontologie_l2 l2 
+    on l2.tip_copil = l1.tip_parinte and l2.dimensiune = l1.dimensiune
+  inner join ontologie_l3 l3 
+    on l3.tip_copil = l2.tip_parinte and l3.dimensiune = l2.dimensiune
+  where (l3.tip_parinte,l3.dimensiune) not in (select tip_copil,dimensiune from ontologie_l4)
+    and l1.tip_copil = 'ideo'
+
+union
+
+select distinct 
+  l1.tip_copil level_1
+  ,l2.tip_copil level_2
+  ,l2.tip_parinte level_3
+  ,null
+  ,null
+  ,null
+  from ontologie_l1 l1
+  inner join ontologie_l2 l2 
+    on l2.tip_copil = l1.tip_parinte and l2.dimensiune = l1.dimensiune
+  where (l2.tip_parinte,l2.dimensiune) not in (select tip_copil,dimensiune from ontologie_l3)
+    and l1.tip_copil = 'ideo'
+
+union
+
+select distinct 
+  l1.tip_copil level_1
+  ,l1.tip_parinte level_2
+  ,null
+  ,null
+  ,null
+  ,null
+  from ontologie_l1 l1
+  where (l1.tip_parinte,l1.dimensiune) not in (select tip_copil,dimensiune from ontologie_l2)
+    and l1.tip_copil = 'ideo'
+
+
+
